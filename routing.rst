@@ -637,7 +637,7 @@ route. With this information, any URL can easily be generated::
     }
 
 .. note::
-
+    
     The ``generateUrl()`` method defined in the base
     :class:`Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller` class is
     just a shortcut for this code::
@@ -722,6 +722,12 @@ route::
 
     // or, in Twig
     // {{ path('blog_show', {'slug': 'slug-value'}) }}
+
+You might get a error that the controller expects a return value:
+Then you can use:
+    
+      return $this->redirect($this->generateUrl('blog_show', array('slug'=> 'my-blog-post'));
+
 
 Translating Routes
 ------------------
